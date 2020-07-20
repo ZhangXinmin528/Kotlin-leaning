@@ -1,4 +1,4 @@
-package com.example.libkotlinbasics
+package com.example.libkotlinbasics.basics
 
 /**
  *Created by ZhangXinmin on zhangxinmin.
