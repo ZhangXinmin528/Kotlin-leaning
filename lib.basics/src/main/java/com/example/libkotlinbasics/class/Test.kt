@@ -14,6 +14,9 @@ class Test {
         fun main(args: Array<String>) {
             val car = Bmw(Color.BLACK);
             car.printCarColor()
+
+            val baseChildren = BaseChildren(10)
+            baseChildren.foo("测试一下好不好用~")
         }
     }
 }
