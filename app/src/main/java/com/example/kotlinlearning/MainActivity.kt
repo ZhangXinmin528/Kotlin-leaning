@@ -1,12 +1,13 @@
 package com.example.kotlinlearning
 
-import android.content.Intent
-import android.view.View
-import android.widget.Button
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.navigation.NavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.kotlinlearning.base.BaseActivity
-import com.example.kotlinlearning.recycler.RecycleviewExampleActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class MainActivity : BaseActivity(), View.OnClickListener {
+class MainActivity : BaseActivity() {
 
     override fun setLayoutId(): Int {
         return R.layout.activity_main
@@ -17,18 +18,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
     override fun initViews() {
 
-        findViewById<Button>(R.id.btn_recycler).setOnClickListener(this)
-
     }
 
-    override fun onClick(v: View?) {
 
-        when (v!!.id) {
-            R.id.btn_recycler -> {
-                val intent = Intent(mContext, RecycleviewExampleActivity::class.java);
-                startActivity(intent)
-            }
-
-        }
-    }
 }

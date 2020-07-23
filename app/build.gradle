@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 //for databinding
-apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion build_versions.compile_sdk
@@ -35,7 +35,7 @@ android {
 
     //数据绑定
     dataBinding {
-        enabled = true
+        enabled = false
     }
 
     compileOptions {
@@ -61,10 +61,15 @@ dependencies {
     implementation deps.constraint_layout
     implementation deps.recyclerview
 
+    // Navigation
+    implementation deps.navigation.runtime_ktx
+    implementation deps.navigation.fragment_ktx
+    implementation deps.navigation.ui_ktx
+
     // Architecture components
     //lifecycle
     implementation deps.lifecycle.runtime
-//    implementation deps.lifecycle.viewmodel_ktx
+    implementation deps.lifecycle.viewmodel_ktx
 //    implementation deps.lifecycle.livedata_ktx
     annotationProcessor deps.lifecycle.compiler
 
