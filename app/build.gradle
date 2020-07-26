@@ -60,6 +60,7 @@ dependencies {
     implementation deps.material
     implementation deps.constraint_layout
     implementation deps.recyclerview
+    implementation deps.rvadapterhelper
 
     // Navigation
     implementation deps.navigation.runtime_ktx

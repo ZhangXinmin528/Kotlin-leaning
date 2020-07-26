@@ -6,8 +6,8 @@
     android:background="@color/colorMainBg"
     android:orientation="vertical">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_container"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_home"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />

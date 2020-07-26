@@ -56,6 +56,7 @@ versions.navigation = "2.3.0-alpha01"
 versions.okhttp_logging_interceptor = "3.9.0"
 versions.paging = "3.0.0-alpha02"
 versions.recyclerview = "1.0.0"
+versions.rvadapterhelper = "3.0.4"
 versions.retrofit = "2.9.0"
 versions.robolectric = "4.2"
 versions.room = "2.3.0-alpha01"
@@ -67,7 +68,7 @@ versions.truth = "1.0.1"
 versions.work = "2.2.0"
 ext.versions = versions
 
-//base project config
+//TODO:base project config
 def build_versions = [:]
 build_versions.min_sdk = 14
 build_versions.compile_sdk = 29
@@ -113,6 +114,7 @@ coroutines.android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions
 coroutines.test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines"
 deps.coroutines = coroutines
 
+//TODO:Dagger
 def dagger = [:]
 dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
 dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
@@ -135,6 +137,7 @@ fragment.runtime_ktx = "androidx.fragment:fragment-ktx:${versions.fragment}"
 fragment.testing = "androidx.fragment:fragment-testing:${versions.fragment}"
 deps.fragment = fragment
 
+//TODO:Glide
 def glide = [:]
 glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
 glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
@@ -144,6 +147,7 @@ deps.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
 
 deps.junit = "junit:junit:$versions.junit"
 
+//TODO:Kotlin
 def kotlin = [:]
 //Kotlin plugin
 kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
@@ -153,6 +157,7 @@ kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
 kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
 deps.kotlin = kotlin
 
+//TODO:Lifecycle
 def lifecycle = [:]
 lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
 lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
@@ -171,6 +176,7 @@ deps.mockito = mockito
 
 deps.mock_web_server = "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
 
+//TODO:Navigation
 def navigation = [:]
 navigation.runtime = "androidx.navigation:navigation-runtime:$versions.navigation"
 navigation.runtime_ktx = "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
@@ -186,8 +192,11 @@ deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${ve
 
 deps.paging_runtime = "androidx.paging:paging-runtime:$versions.paging"
 
+//TODO:Recycleview
 deps.recyclerview = "androidx.recyclerview:recyclerview:$versions.recyclerview"
+deps.rvadapterhelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions.rvadapterhelper"
 
+//TODO:Retrofit
 def retrofit = [:]
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
@@ -196,6 +205,7 @@ deps.retrofit = retrofit
 
 deps.robolectric = "org.robolectric:robolectric:$versions.robolectric"
 
+//TODO:Room
 def room = [:]
 room.runtime = "androidx.room:room-runtime:$versions.room"
 room.compiler = "androidx.room:room-compiler:$versions.room"
@@ -227,6 +237,7 @@ def addRepos(RepositoryHandler handler) {
     handler.google()
     handler.jcenter()
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    handler.maven { url 'https://jitpack.io' }
 }
 
 ext.addRepos = this.&addRepos

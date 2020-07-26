@@ -17,7 +17,7 @@ abstract class BaseFragment() : Fragment() {
 
     protected var mContext: Context? = null
 
-    abstract fun setLayoutId(): Int;
+    abstract fun setLayoutId(): Int
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
