@@ -29,19 +29,21 @@ abstract class BaseFragment() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(setLayoutId(), container, false);
+        val rootView = inflater.inflate(setLayoutId(), container, false)
+
+        initParamsAndValues()
+
+        initViews(rootView)
+
         return rootView
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        initParamsAndValues()
-
-        initViews()
     }
 
     abstract fun initParamsAndValues();
 
-    abstract fun initViews();
+    abstract fun initViews(rootView: View);
 }
