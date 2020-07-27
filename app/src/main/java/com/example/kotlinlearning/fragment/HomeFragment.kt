@@ -1,10 +1,8 @@
 package com.example.kotlinlearning.fragment
 
 import android.view.View
-import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.kotlinlearning.MainActivity
 import com.example.kotlinlearning.R
 import com.example.kotlinlearning.adapter.RvExampleAdapter
 import com.example.kotlinlearning.base.BaseFragment
@@ -41,17 +39,7 @@ class HomeFragment() : BaseFragment() {
 
     override fun initViews(rootView: View) {
 
-        //TODO:为什么有问题？
-//        toolbar_frg_rv!!.title = "Home"
-        (activity!! as MainActivity).setSupportActionBar(toolbar_frg_rv)
-        val actionBar: ActionBar? = (activity!! as MainActivity).supportActionBar
-        if (actionBar!=null){
-            actionBar.title = "Home"
-            actionBar.setDisplayHomeAsUpEnabled(true)
-            actionBar.setHomeButtonEnabled(true)
-        }
-
-
+        //TODO:toolbar以include的形式存在问题
         rv_fragment_home.adapter = adapter
         rv_fragment_home.addItemDecoration(
             DividerItemDecoration(

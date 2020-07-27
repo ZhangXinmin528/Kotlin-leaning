@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<include
-        android:id="@+id/toolbar_frg_rv"
-        layout="@layout/layout_toolbar" />-->
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_frg_rv"
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Home"
+        app:titleTextColor="@android:color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_fragment_home"

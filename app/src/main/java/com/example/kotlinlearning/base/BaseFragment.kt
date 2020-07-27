@@ -17,6 +17,8 @@ abstract class BaseFragment() : Fragment() {
 
     protected var mContext: Context? = null
 
+    protected lateinit var rootView: View
+
     abstract fun setLayoutId(): Int
 
     override fun onAttach(context: Context) {
@@ -29,18 +31,16 @@ abstract class BaseFragment() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView = inflater.inflate(setLayoutId(), container, false)
-
-        initParamsAndValues()
-
-        initViews(rootView)
-
+        rootView = inflater.inflate(setLayoutId(), container, false)
         return rootView
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        initParamsAndValues()
+
+        initViews(rootView)
     }
 
     abstract fun initParamsAndValues();
